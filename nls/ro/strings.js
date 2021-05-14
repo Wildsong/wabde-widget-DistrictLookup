@@ -1,4 +1,4 @@
-/*global define*/
+﻿/*global define*/
 define({
   "_widgetLabel": "Căutare district",
   "searchHeaderText": "Căutați o adresă sau localizați pe hartă",

@@ -76,7 +76,10 @@ define({
     "set": "Setare",
     "fieldName": "Nume",
     "invalidUrlTip": "Adresa URL ${URL} este nevalidă sau inaccesibilă.",
-    "invalidSearchSources": "Setări nevalide sursă căutare"
+    "invalidSearchSources": "Setări nevalide sursă căutare",
+    "errorMessageLabel": "Mesaj de eroare",
+    "errorMessageHint": "Sugestie: setați un mesaj de afișat când nu sunt găsite rezultate",
+    "noPrecinctFoundMsg": "Nu a fost găsit niciun poligon pentru această adresă sau locaţie"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Selectarea stratului tematic de poligoane",

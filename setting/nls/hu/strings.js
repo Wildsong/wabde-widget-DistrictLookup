@@ -76,7 +76,10 @@ define({
     "set": "Beállítás",
     "fieldName": "Név",
     "invalidUrlTip": "A(z) ${URL} URL-cím érvénytelen vagy nem érhető el.",
-    "invalidSearchSources": "A keresési forrás beállításai érvénytelenek"
+    "invalidSearchSources": "A keresési forrás beállításai érvénytelenek",
+    "errorMessageLabel": "Hibaüzenet",
+    "errorMessageHint": "Tipp: Állítson be egy üzenetet, amely akkor jelenjen meg, ha eredménytelen a keresés",
+    "noPrecinctFoundMsg": "Ehhez a címhez vagy helyhez nem található polygon"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Polygonréteg kiválasztása",

@@ -76,7 +76,10 @@ define({
     "set": "Установить",
     "fieldName": "Название",
     "invalidUrlTip": "URL ${URL} является недопустимым или недостижимым.",
-    "invalidSearchSources": "Некорректные параметры поиска источника"
+    "invalidSearchSources": "Некорректные параметры поиска источника",
+    "errorMessageLabel": "Сообщение об ошибке",
+    "errorMessageHint": "Подсказка: настроить отображение сообщения, если не найдено результатов.",
+    "noPrecinctFoundMsg": "Для этого адреса или местоположения полигон не найден"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Выбрать полигональный слой",

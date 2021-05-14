@@ -76,7 +76,10 @@ define({
     "set": "設定",
     "fieldName": "名稱",
     "invalidUrlTip": "URL ${URL} 無效或不可存取。",
-    "invalidSearchSources": "搜尋來源設定無效"
+    "invalidSearchSources": "搜尋來源設定無效",
+    "errorMessageLabel": "錯誤訊息",
+    "errorMessageHint": "提示: 設定在找不到結果時所顯示的訊息",
+    "noPrecinctFoundMsg": "找不到此地址或位置的多邊形"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "選擇多邊形圖層",

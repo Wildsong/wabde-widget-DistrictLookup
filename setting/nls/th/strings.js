@@ -76,7 +76,10 @@ define({
     "set": "ตั้ง",
     "fieldName": "ชื่อ",
     "invalidUrlTip": "URL ${URL} ไม่ถูกต้อง หรือไม่สามารถเข้าถึงได้",
-    "invalidSearchSources": "การตั้งค่าแหล่งข้อมูลสำหรับค้นหาไม่ถูกต้อง"
+    "invalidSearchSources": "การตั้งค่าแหล่งข้อมูลสำหรับค้นหาไม่ถูกต้อง",
+    "errorMessageLabel": "ข้อความแสดงความผิดพลาด",
+    "errorMessageHint": "เคล็ดลับ: ตั้งค่าข้อความที่จะแสดงเมื่อไม่พบผลลัพธ์",
+    "noPrecinctFoundMsg": "ไม่พบพื้นที่ สำหรับที่อยู่หรือตำแหน่งนี้"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "เลือกชั้นข้อมูลพื้นที่",

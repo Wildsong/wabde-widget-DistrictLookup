@@ -51,6 +51,7 @@
             "contentType": "image/png",
             "width": 22.5,
             "height": 22.5
-        }
+        },
+    "errorMessage": ""
     }
 }

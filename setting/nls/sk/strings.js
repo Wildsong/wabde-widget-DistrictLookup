@@ -76,7 +76,10 @@ define({
     "set": "Nastaviť",
     "fieldName": "Meno",
     "invalidUrlTip": "URL ${URL} je neplatná alebo nedostupná.",
-    "invalidSearchSources": "Neplatné nastavenia zdroja vyhľadávania"
+    "invalidSearchSources": "Neplatné nastavenia zdroja vyhľadávania",
+    "errorMessageLabel": "Chybová správa",
+    "errorMessageHint": "Tip: Nastavte správu, ktorá sa zobrazí ak neboli nájdené žiadne výsledky",
+    "noPrecinctFoundMsg": "Na tejto adrese alebo umiestnení nebol nájdený žiadny polygón"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Vybrať vrstvu polygónu",

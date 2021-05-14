@@ -1,4 +1,4 @@
-/*global define*/
+﻿/*global define*/
 define({
   "_widgetLabel": "Teritorijos paieška",
   "searchHeaderText": "Ieškoti adreso arba rasti žemėlapyje",

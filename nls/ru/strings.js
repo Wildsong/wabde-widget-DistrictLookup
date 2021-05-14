@@ -1,4 +1,4 @@
-/*global define*/
+﻿/*global define*/
 define({
   "_widgetLabel": "Поиск по полигону",
   "searchHeaderText": "Поиск адресов или мест на карте",

@@ -76,7 +76,10 @@ define({
     "set": "Uzstādīt",
     "fieldName": "Nosaukums",
     "invalidUrlTip": "URL ${URL} nav derīgs vai tam nevar piekļūt.",
-    "invalidSearchSources": "Nederīgi meklēšanas avota iestatījumi"
+    "invalidSearchSources": "Nederīgi meklēšanas avota iestatījumi",
+    "errorMessageLabel": "Kļūdas ziņojums",
+    "errorMessageHint": "Ieteikums: iestatiet ziņojumu, lai tas tiktu parādīts, ja nav atrasts neviens rezultāts",
+    "noPrecinctFoundMsg": "Šai adresei vai izvietojumam nav atrasts neviens poligons"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Izvēlēties laukuma slāni",

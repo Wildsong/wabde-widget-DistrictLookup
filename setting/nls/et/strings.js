@@ -76,7 +76,10 @@ define({
     "set": "Määra",
     "fieldName": "Nimi",
     "invalidUrlTip": "URL ${URL} ei sobi või pole kättesaadav.",
-    "invalidSearchSources": "Otsinguallika sobimatud seaded"
+    "invalidSearchSources": "Otsinguallika sobimatud seaded",
+    "errorMessageLabel": "Veateade",
+    "errorMessageHint": "Vihje: seadke teade, mis kuvatakse, kui ei leidu tulemusi",
+    "noPrecinctFoundMsg": "Selle aadressi või asukoha kohta ei leitud ühtki polügooni"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Vali polügoonikiht",

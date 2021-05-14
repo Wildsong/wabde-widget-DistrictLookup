@@ -76,7 +76,10 @@ define({
     "set": "Festlegen",
     "fieldName": "Name",
     "invalidUrlTip": "Die URL ${URL} ist ungültig oder es kann nicht darauf zugegriffen werden.",
-    "invalidSearchSources": "Ungültige Suchquelleneinstellungen"
+    "invalidSearchSources": "Ungültige Suchquelleneinstellungen",
+    "errorMessageLabel": "Fehlermeldung",
+    "errorMessageHint": "Hinweis: Legen Sie eine Meldung fest, die angezeigt wird, wenn keine Ergebnisse gefunden werden.",
+    "noPrecinctFoundMsg": "Für diese Adresse oder Position wurde kein Polygon gefunden"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Polygon-Layer auswählen",

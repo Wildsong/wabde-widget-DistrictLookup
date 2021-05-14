@@ -76,7 +76,10 @@ define({
     "set": "Angiv",
     "fieldName": "Navn",
     "invalidUrlTip": "URL’en ${URL} er ugyldig eller utilgængelig.",
-    "invalidSearchSources": "Ugyldige søgekildeindstillinger"
+    "invalidSearchSources": "Ugyldige søgekildeindstillinger",
+    "errorMessageLabel": "Fejlmeddelelse",
+    "errorMessageHint": "Tip: Angiv en meddelelse, der skal vises, når der ikke findes nogen resultater",
+    "noPrecinctFoundMsg": "Ingen polygon fundet for denne adresse eller position"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Vælg polygonlag",

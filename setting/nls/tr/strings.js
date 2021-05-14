@@ -76,7 +76,10 @@ define({
     "set": "Ayarla",
     "fieldName": "Ad",
     "invalidUrlTip": "${URL} URL'si geçersiz veya erişilemez durumda.",
-    "invalidSearchSources": "Geçersiz arama kaynağı ayarları"
+    "invalidSearchSources": "Geçersiz arama kaynağı ayarları",
+    "errorMessageLabel": "Hata iletisi",
+    "errorMessageHint": "İpucu: Sonuç bulunamadığında görüntülenecek bir ileti belirleyin",
+    "noPrecinctFoundMsg": "Bu adres veya konum için alan bulunamadı"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Alan katmanını seç",

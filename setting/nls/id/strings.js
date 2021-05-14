@@ -76,7 +76,10 @@ define({
     "set": "Atur",
     "fieldName": "Nama",
     "invalidUrlTip": "URL ${URL} tidak valid atau tidak dapat diakses.",
-    "invalidSearchSources": "Pengaturan sumber pencarian tidak valid"
+    "invalidSearchSources": "Pengaturan sumber pencarian tidak valid",
+    "errorMessageLabel": "Pemberitahuan kesalahan",
+    "errorMessageHint": "Petunjuk: Atur pesan untuk ditampilkan saat tidak ada hasil ditemukan",
+    "noPrecinctFoundMsg": "Tidak ditemukan poligon untuk alamat atau lokasi ini"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Pilih layer poligon",

@@ -1,4 +1,4 @@
-/*global define*/
+﻿/*global define*/
 define({
   "_widgetLabel": "איתור אזור",
   "searchHeaderText": "חפש כתובת או אתר כתובת במפה",

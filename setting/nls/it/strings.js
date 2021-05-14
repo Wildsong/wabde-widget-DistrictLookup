@@ -76,7 +76,10 @@ define({
     "set": "Imposta",
     "fieldName": "Nome",
     "invalidUrlTip": "URL ${URL} non valido o non accessibile.",
-    "invalidSearchSources": "Impostazioni fonte di ricerca non valide"
+    "invalidSearchSources": "Impostazioni fonte di ricerca non valide",
+    "errorMessageLabel": "Messaggio di errore",
+    "errorMessageHint": "Suggerimento: imposta un messaggio per visualizzare quando non vengono trovati risultati",
+    "noPrecinctFoundMsg": "Nessun poligono trovato per questo indirizzo o posizione"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Seleziona layer poligono",

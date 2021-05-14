@@ -77,8 +77,11 @@ define({
       set: "Set", // Shown as a label in config UI for button
       fieldName: "Name", // Shown as a label in config UI
       invalidUrlTip: "The URL ${URL} is invalid or inaccessible.", // Shown as error message if URL is invalid
-      invalidSearchSources: "Invalid search source settings" // Show as error msg if search source settings are invalid
-    },
+      invalidSearchSources: "Invalid search source settings", // Show as error msg if search source settings are invalid
+      errorMessageLabel: "Error message", // Shown as a label in configuration
+      errorMessageHint: "Hint: Set a message to display when no results found", // Shown as a hint in configuration
+      noPrecinctFoundMsg: "No polygon found for this address or location", // Default msg for backward compatibility
+      },
     layerSelector: {
       selectPolygonLayerLabel: "Select polygon layer", // shown as a label in config UI dialog box for selecting polygon (precinct) layer on map
       selectPolygonLayerHintText: "Hint: Used to select polygon layer.", // shown as hint label in config UI dialog box for selecting polygon (precinct) layer on map

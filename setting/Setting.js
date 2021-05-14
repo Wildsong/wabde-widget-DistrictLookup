@@ -28,6 +28,7 @@ define([
   "jimu/dijit/Message",
   "jimu/dijit/LoadingIndicator",
   "jimu/dijit/Popup",
+  "jimu/utils",
   "./NetworkServiceChooser",
   "./LayerChooser",
   "./SearchSourceSettings",
@@ -54,6 +55,7 @@ define([
   Message,
   LoadingIndicator,
   Popup,
+  jimuUtils,
   NetworkServiceChooser,
   LayerChooser,
   SearchSourceSettings,
@@ -244,7 +246,8 @@ define([
         "directionLengthUnit": this.UnitsDetails[this.directionLengthUnitNode.value],
         "showLocationTool": this.setLocationCheckBoxNode.getValue(),
         "symbols": this._symbolParams,
-        "searchSourceSettings": searchSources
+        "searchSourceSettings": searchSources,
+        "errorMessage": utils.stripHTML(this.noSearchAddressNode.get('value'))
       };
       return this.config;
     },
@@ -288,6 +291,11 @@ define([
           this.routeServiceURLNode.set("value", window.location.protocol +
             "//route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World"
           );
+        }
+        if (this.config.hasOwnProperty('errorMessage')) {
+          this.noSearchAddressNode.set("value", jimuUtils.sanitizeHTML(this.config.errorMessage));
+        } else {
+          this.noSearchAddressNode.set("value", this.nls.searchSourceSetting.noPrecinctFoundMsg);
         }
       }
     },

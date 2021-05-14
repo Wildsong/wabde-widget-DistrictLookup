@@ -76,7 +76,10 @@ define({
     "set": "Instellen",
     "fieldName": "Naam",
     "invalidUrlTip": "De URL ${URL} is ongeldig of ontoegankelijk.",
-    "invalidSearchSources": "Ongeldige instellingen zoekbron"
+    "invalidSearchSources": "Ongeldige instellingen zoekbron",
+    "errorMessageLabel": "Foutmelding",
+    "errorMessageHint": "Hint: Stelt een bericht in dat wordt weergegeven wanneer er geen resultaten worden gevonden",
+    "noPrecinctFoundMsg": "Geen polygoon gevonden voor dit adres of locatie"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Polygoonlaag selecteren",

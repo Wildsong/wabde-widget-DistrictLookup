@@ -76,7 +76,10 @@ define({
     "set": "설정",
     "fieldName": "이름",
     "invalidUrlTip": "${URL} URL이 잘못되었거나 접근할 수 없습니다.",
-    "invalidSearchSources": "잘못된 원본 설정 검색"
+    "invalidSearchSources": "잘못된 원본 설정 검색",
+    "errorMessageLabel": "오류 메시지",
+    "errorMessageHint": "힌트: 결과가 없는 경우에 표시되는 메시지를 설정합니다.",
+    "noPrecinctFoundMsg": "이 주소나 위치에 대한 폴리곤이 없음"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "폴리곤 레이어 선택",

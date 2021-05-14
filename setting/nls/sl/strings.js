@@ -76,7 +76,10 @@ define({
     "set": "Nastavi",
     "fieldName": "Ime",
     "invalidUrlTip": "URL ${URL} ni veljaven ali dostopen.",
-    "invalidSearchSources": "Neveljavne nastavitve iskanja vira"
+    "invalidSearchSources": "Neveljavne nastavitve iskanja vira",
+    "errorMessageLabel": "Sporočilo o napaki",
+    "errorMessageHint": "Namig: nastavite sporočilo, ki se bo prikazalo, ko ni najden noben rezultat.",
+    "noPrecinctFoundMsg": "Za ta naslov ali lokacijo ni mogoče najti poligona"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Izberite poligonski sloj",

@@ -76,7 +76,10 @@ define({
     "set": "تعيين",
     "fieldName": "الاسم",
     "invalidUrlTip": "عنوان URL لـ ${URL} غير صحيح أو لا يمكن الوصول إليه.",
-    "invalidSearchSources": "بحث غير صحيح في إعدادات المصدر"
+    "invalidSearchSources": "بحث غير صحيح في إعدادات المصدر",
+    "errorMessageLabel": "رسالة الخطأ",
+    "errorMessageHint": "تلميح: تعيين رسالة لعرضها عند عدم العثور على نتائج",
+    "noPrecinctFoundMsg": "لم يتم العثور على أي مضلعات لهذا العنوان أو الموقع"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "حدد طبقة مضلع",

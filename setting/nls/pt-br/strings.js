@@ -76,7 +76,10 @@ define({
     "set": "Configurar",
     "fieldName": "Nome",
     "invalidUrlTip": "A URL ${URL} é inválida ou inacessível.",
-    "invalidSearchSources": "Configurações de fonte de pesquisa inválida"
+    "invalidSearchSources": "Configurações de fonte de pesquisa inválida",
+    "errorMessageLabel": "Mensagem de erro",
+    "errorMessageHint": "Dica: Defina uma mensagem a ser exibida quando nenhum resultado for encontrado",
+    "noPrecinctFoundMsg": "Nenhum polígono localizado para este endereço ou local"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Selecionar camada de polígono",

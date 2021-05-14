@@ -76,7 +76,10 @@ define({
     "set": "Defineix",
     "fieldName": "Nom",
     "invalidUrlTip": "L'adreça URL ${URL} no és vàlida o no s'hi pot accedir.",
-    "invalidSearchSources": "Configuració de l'origen de la cerca no vàlida"
+    "invalidSearchSources": "Configuració de l'origen de la cerca no vàlida",
+    "errorMessageLabel": "Missatge d'error",
+    "errorMessageHint": "Suggeriment: definiu el missatge que voleu que es mostri quan no es trobin resultats.",
+    "noPrecinctFoundMsg": "No s'ha trobat cap polígon per a aquesta adreça o ubicació"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Seleccioneu la capa de polígon",

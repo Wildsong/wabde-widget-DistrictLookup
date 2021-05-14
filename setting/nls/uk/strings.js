@@ -76,7 +76,10 @@ define({
     "set": "Задати",
     "fieldName": "Назва",
     "invalidUrlTip": "URL ${URL} недійсний або недоступний.",
-    "invalidSearchSources": "Недійсні налаштування джерела пошуку"
+    "invalidSearchSources": "Недійсні налаштування джерела пошуку",
+    "errorMessageLabel": "Повідомлення про помилку",
+    "errorMessageHint": "Підказка: задайте повідомлення, відображуване, коли не знайдено результатів",
+    "noPrecinctFoundMsg": "Не знайдено полігон для цієї адреси або місця розташування"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Вибрати полігональний шар",

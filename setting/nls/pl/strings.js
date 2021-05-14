@@ -76,7 +76,10 @@ define({
     "set": "Ustaw",
     "fieldName": "Nazwa",
     "invalidUrlTip": "Adres URL ${URL} jest nieprawidłowy lub nieosiągalny.",
-    "invalidSearchSources": "Nieprawidłowe ustawienia źródła wyszukiwania"
+    "invalidSearchSources": "Nieprawidłowe ustawienia źródła wyszukiwania",
+    "errorMessageLabel": "Komunikat o błędzie",
+    "errorMessageHint": "Wskazówka: skonfiguruj komunikat wyświetlany w sytuacji, gdy nie zostały znalezione żadne wyniki",
+    "noPrecinctFoundMsg": "Nie znaleziono poligonu dla tego adresu lub lokalizacji"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Wybierz warstwę poligonową",

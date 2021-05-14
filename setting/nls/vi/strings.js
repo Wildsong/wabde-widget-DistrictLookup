@@ -76,7 +76,10 @@ define({
     "set": "Thiết lập",
     "fieldName": "Tên",
     "invalidUrlTip": "URL ${URL} không hợp lệ hoặc không thể truy cập được.",
-    "invalidSearchSources": "Thiết lập nguồn tìm kiếm không hợp lệ"
+    "invalidSearchSources": "Thiết lập nguồn tìm kiếm không hợp lệ",
+    "errorMessageLabel": "Thông báo lỗi",
+    "errorMessageHint": "Gợi ý: Đặt thông báo để hiển thị khi không tìm thấy kết quả",
+    "noPrecinctFoundMsg": "Không tìm thấy đa giác cho địa chỉ hoặc vị trí này"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Chọn lớp đa giác",

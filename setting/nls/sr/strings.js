@@ -76,7 +76,10 @@ define({
     "set": "Postavi",
     "fieldName": "Naziv",
     "invalidUrlTip": "URL adresa ${URL} nije validna ili nije dostupna.",
-    "invalidSearchSources": "Nevažeće postavke za pretragu izvora"
+    "invalidSearchSources": "Nevažeće postavke za pretragu izvora",
+    "errorMessageLabel": "Poruka o grešci",
+    "errorMessageHint": "Savet: Podesite poruku da se prikaže kada se ne pronađe nijedan rezultat",
+    "noPrecinctFoundMsg": "Nema pronađenih poligona za ovu adresu ili lokaciju"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Izaberite sloj poligona",

@@ -1,4 +1,4 @@
-/*global define*/
+﻿/*global define*/
 define({
   "_widgetLabel": "Poizvedba po okolišu",
   "searchHeaderText": "Išči naslov ali lociraj na karti",

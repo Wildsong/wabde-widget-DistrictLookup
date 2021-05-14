@@ -76,7 +76,10 @@ define({
     "set": "Aseta",
     "fieldName": "Nimi",
     "invalidUrlTip": "Syötetty URL-osoite ${URL} on virheellinen, tai se ei ole käytettävissä.",
-    "invalidSearchSources": "Virheelliset hakulähteen asetukset"
+    "invalidSearchSources": "Virheelliset hakulähteen asetukset",
+    "errorMessageLabel": "Virhesanoma",
+    "errorMessageHint": "Vihje: Aseta sanoma, joka näytetään, kun tuloksia ei löydy",
+    "noPrecinctFoundMsg": "Tälle osoitteelle tai sijainnille ei löydy aluetta"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Valitse aluekarttataso",

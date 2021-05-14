@@ -89,7 +89,7 @@ define([
                 } else {
                   //check whether id of layer is saved in config then only match layers with id value to support backward compatibility of widget
                   if (!id || layer.id === id) {
-                    if (layer.url.replace(/.*?:\/\//g, "") === (
+                    if (layer.url && layer.url.replace(/.*?:\/\//g, "") === (
                       baseURL + relatedLayerId).replace(/.*?:\/\//g, "")) {
                       //set flag to identify layer type
                       selectedLayer.isMapServer = false;

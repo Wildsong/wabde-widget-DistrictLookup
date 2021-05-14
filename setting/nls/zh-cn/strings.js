@@ -76,7 +76,10 @@ define({
     "set": "设置",
     "fieldName": "名称",
     "invalidUrlTip": "URL ${URL} 无效或不可访问。",
-    "invalidSearchSources": "搜索源设置无效"
+    "invalidSearchSources": "搜索源设置无效",
+    "errorMessageLabel": "错误消息",
+    "errorMessageHint": "提示：设置未找到结果时显示的消息",
+    "noPrecinctFoundMsg": "未找到该地址或位置的面。"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "选择面图层",

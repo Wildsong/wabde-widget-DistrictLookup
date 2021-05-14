@@ -76,7 +76,10 @@ define({
     "set": "Definir",
     "fieldName": "Nombre",
     "invalidUrlTip": "No se puede acceder a la dirección URL ${URL} o bien no es válida.",
-    "invalidSearchSources": "Configuración de fuente de búsqueda no válida"
+    "invalidSearchSources": "Configuración de fuente de búsqueda no válida",
+    "errorMessageLabel": "Mensaje de error",
+    "errorMessageHint": "Sugerencia: Configure un mensaje para mostrar si no se encuentra ningún resultado",
+    "noPrecinctFoundMsg": "No se encontró ningún polígono para esta dirección o ubicación"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Seleccionar capa de polígono",

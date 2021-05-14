@@ -35,6 +35,8 @@ define([
   "esri/SpatialReference",
   "esri/graphicsUtils",
   "esri/graphic",
+  "esri/tasks/GeometryService",
+  "dojo/Deferred",
   "dojo/dom-attr",
   "dojo/dom-geometry",
   "dojo/dom-style",
@@ -44,6 +46,7 @@ define([
   "esri/InfoTemplate",
   "esri/dijit/PopupTemplate",
   "esri/tasks/query",
+  "esri/request",
   "esri/tasks/RelationshipQuery",
   "jimu/dijit/Message",
   "jimu/dijit/TabContainer",
@@ -55,8 +58,7 @@ define([
   "./utils",
   "esri/renderers/jsonUtils",
   "jimu/utils",
-  'dojo/_base/event',
-  'dijit/focus'
+  'dojo/_base/event'
 ], function (
   declare,
   BaseWidget,
@@ -79,6 +81,8 @@ define([
   SpatialReference,
   graphicsUtils,
   Graphic,
+  GeometryService,
+  Deferred,
   domAttr,
   domGeom,
   domStyle,
@@ -88,6 +92,7 @@ define([
   InfoTemplate,
   PopupTemplate,
   esriQuery,
+  esriRequest,
   RelationshipQuery,
   Message,
   JimuTabContainer,
@@ -99,8 +104,7 @@ define([
   appUtils,
   rendererJsonUtils,
   jimuUtils,
-  Event,
-  focusUtil
+  Event
 ) {
   return declare([BaseWidget], {
 
@@ -130,6 +134,7 @@ define([
     _precintRelatedRecordsPanel: null,//To display related table records for precint feature
     _pollingRelatedRecordsPanel: null,//To display related table records for polling place
     _searchInstance: null, //To store search instance
+    _geocoderSpatialRef: null,
 
     postMixInProperties: function () {
       //mixin default nls with widget nls
@@ -275,7 +280,8 @@ define([
             }
           }
           //updated definition expression for polling-place layer
-          if (this.config && this.config.pollingPlaceLayerInfo && this.config.pollingPlaceLayerInfo.id) {
+          if (this.config && this.config.pollingPlaceLayerInfo &&
+            this.config.pollingPlaceLayerInfo.id) {
             pollingPlaceLayer = layerInfosObj.getLayerInfoById(this.config.pollingPlaceLayerInfo
               .id);
             if (pollingPlaceLayer) {
@@ -445,10 +451,9 @@ define([
       var informationPanel;
       //create information panel
       informationPanel = domConstruct.create("div",{"class":"esriCTInformationContentRegion"});
-      
       //for accesibility scroll bar is not accessible through keyboard
       //when popup is lengthy and does not have any focusable element
-      this.informationPanel= informationPanel;
+      this.informationPanel = informationPanel;
       domAttr.set(this.informationPanel, "tabindex", 0);
       domAttr.set(this.informationPanel, "role", "region");
       //create nodes to show infowindow contents
@@ -591,7 +596,8 @@ define([
     * @memberOf widgets/DistrictLookup/Widget
     */
     _getFeatureInfoLastNode: function () {
-      var lastFocusNode, allNodesInFeatureInfo, imageAttachments, featurePopup = [];
+      var lastFocusNode, allNodesInFeatureInfo, imageAttachments, featurePopup = [],
+        selectedTabTitle;
       //Check for last node in all the popup contents
       //This includes popup for precint, polling and related features
       featurePopup = query(".esriCTPopupInfo", this.domNode);
@@ -615,8 +621,9 @@ define([
       //if tab is present and information tab is selected
       //or tab is not present
       if (!lastFocusNode) {
-        if (this.tabContainer !== '' && this.tabContainer !== null && this.tabContainer !== undefined) {
-          var selectedTabTitle = this.tabContainer.viewStack.getSelectedLabel();
+        if (this.tabContainer !== '' && this.tabContainer !== null &&
+          this.tabContainer !== undefined) {
+          selectedTabTitle = this.tabContainer.viewStack.getSelectedLabel();
           if (selectedTabTitle === this.nls.informationTabTitle) {
             lastFocusNode = this.informationPanel;
           }
@@ -628,11 +635,13 @@ define([
       if (!lastFocusNode && !domClass.contains(this.backButtonNode, "esriCTHidden")) {
         lastFocusNode = this.backButtonNode;
       }
-      // After search complete, if information tab is active, than information tab should be set as a last focus node.
+      // After search complete, if information tab is active,
+      // than information tab should be set as a last focus node.
       // So that, after search icon, focus sets on information tab.
-      if (this.tabContainer !== '' && this.tabContainer !== null && this.tabContainer !== undefined) {
+      if (this.tabContainer !== '' && this.tabContainer !== null &&
+        this.tabContainer !== undefined) {
         if (this.tabContainer.viewStack) {
-          var selectedTabTitle = this.tabContainer.viewStack.getSelectedLabel();
+          selectedTabTitle = this.tabContainer.viewStack.getSelectedLabel();
           if (selectedTabTitle === this.nls.informationTabTitle) {
             if (this.tabContainer.controlNodes && this.tabContainer.controlNodes.length > 0) {
               if (!lastFocusNode) {
@@ -750,9 +759,23 @@ define([
           }
         }));
         if (geocoderUrl) {
-          this._locatorInstance = new Locator(geocoderUrl);
-          this.own(this._locatorInstance.on("location-to-address-complete", lang.hitch(
-            this, this._onLocationToAddressComplete)));
+          this._loading.show();
+          //get spatial ref of geocoder and the initiate Locator
+          esriRequest({
+            url: geocoderUrl,
+            content: {
+              f: 'json'
+            },
+            handleAs: 'json',
+            callbackPrams: 'callback'
+          }).then(lang.hitch(this, function (geocoderInfo) {
+            this._loading.hide();
+            this._geocoderSpatialRef = new SpatialReference(geocoderInfo.spatialReference);
+            //create the locator instance to reverse geocode the address
+            this._locatorInstance = new Locator(geocoderUrl);
+            this.own(this._locatorInstance.on("location-to-address-complete", lang.hitch(
+              this, this._onLocationToAddressComplete)));
+          }));
         }
       }
     },
@@ -796,6 +819,40 @@ define([
           screenPoint));
       }
     },
+
+    /**
+   * Returns the reverse geocoding address
+   * @memberOf widgets/DistrictLookup/Widget
+   **/
+    showReverseGeocodedAddress: function () {
+      if (this._geocoderSpatialRef && this._locatorInstance && this._selectedLocation) {
+        this.getProjectedGeometry(this._selectedLocation.geometry, this._geocoderSpatialRef).then(
+          lang.hitch(this, function (geometry) {
+            this._locatorInstance.locationToAddress(geometry, 100);
+          }));
+      }
+    },
+
+    /**
+    * Returns the projected geometry in outSR
+    * @memberOf widgets/DistrictLookup/Widget
+    **/
+    getProjectedGeometry: function (geometry, outSR) {
+      var deferred, result, geometryService;
+      geometryService = new GeometryService(this.config.helperServices.geometry.url);
+      deferred = new Deferred();
+      if (webMercatorUtils.canProject(geometry, outSR)) {
+        result = webMercatorUtils.project(geometry, outSR);
+        deferred.resolve(result);
+      } else {
+        geometryService.project([geometry], outSR, function (projectedGeometries) {
+          result = projectedGeometries[0];
+          deferred.resolve(result);
+        });
+      }
+      return deferred.promise;
+    },
+
 
     /**
     * This function set's the configured layer
@@ -892,8 +949,7 @@ define([
       //if feature is form map click show the reverse geocoded address
       if (this._locatorInstance && evt.isFeatureFromMapClick &&
         this._selectedLocation && this._selectedLocation.geometry) {
-        this._locatorInstance.locationToAddress(webMercatorUtils
-          .webMercatorToGeographic(this._selectedLocation.geometry), 100);
+        this.showReverseGeocodedAddress();
       }
       //If selected feature is point only then initialize work-flow to search
       //else only show the selected polygon or polyline on map and show info-window, and set extent of map to selected geometry
@@ -1166,7 +1222,7 @@ define([
                 }
               }
             } else {
-              this._showMessage(this.nls.noPrecinctFoundMsg);
+              this._showNoPrecinctFoundMsg();
               this._loading.hide();
             }
             //show searched/selected location on map
@@ -1175,8 +1231,21 @@ define([
             this._loading.hide();
           }));
       } else {
-        this._showMessage(this.nls.noPrecinctFoundMsg);
+        this._showNoPrecinctFoundMsg();
         this._loading.hide();
+      }
+    },
+
+    _showNoPrecinctFoundMsg: function () {
+      // by default for backward compatiblity show msg from nls
+      var msg = this.nls.noPrecinctFoundMsg;
+      //if msg is configured then use it
+      if (this.config.hasOwnProperty('errorMessage')) {
+        msg = jimuUtils.sanitizeHTML(this.config.errorMessage);
+      }
+      //if empty msg is configured then dont show the message
+      if (msg) {
+        this._showMessage(msg);
       }
     },
 
@@ -1220,8 +1289,8 @@ define([
         domClass.remove(this._precinctInfoContentDiv,
           "esriCTHidden");
         // create contentpane to show infowindow contents for precinct layer
-        this._precinctInfoContent = new ContentPane({ "class": "esriCTPopupInfo" }, domConstruct.create(
-          "div", {}, this._precinctInfoContentDiv));
+        this._precinctInfoContent = new ContentPane({ "class": "esriCTPopupInfo" },
+          domConstruct.create("div", {}, this._precinctInfoContentDiv));
         this._precinctInfoContent.startup();
         popupContent = selectedFeature.getContent();
         popupRenderer = registry.byId(popupContent.id);
@@ -1231,7 +1300,6 @@ define([
           this._getFeatureInfoLastNode();
         })));
         this._precinctInfoContent.set("content", popupContent);
-
         if (this.id && registry.byId(this.id)) {
           registry.byId(this.id).resize();
         }
@@ -1902,7 +1970,8 @@ define([
      * This function is used to set focus on search dropdown when user presses tab on inactive direction tab
      */
     _attachEventToTab: function () {
-      if (this.tabContainer !== '' && this.tabContainer !== null && this.tabContainer !== undefined) {
+      if (this.tabContainer !== '' && this.tabContainer !== null &&
+        this.tabContainer !== undefined) {
         if (this.tabContainer.controlNodes && this.tabContainer.controlNodes.length > 1) {
           var directionTab = this.tabContainer.controlNodes[1];
           this.own(on(directionTab, 'keydown', lang.hitch(this, function (evt) {

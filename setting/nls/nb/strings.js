@@ -76,7 +76,10 @@ define({
     "set": "Angi",
     "fieldName": "Navn",
     "invalidUrlTip": "URL-en ${URL} er ugyldig eller ikke tilgjengelig.",
-    "invalidSearchSources": "Ugyldige søkekildeinnstillinger"
+    "invalidSearchSources": "Ugyldige søkekildeinnstillinger",
+    "errorMessageLabel": "Feilmelding",
+    "errorMessageHint": "Hint: Angi meldingen som skal vises når det ikke blir funnet noen resultater",
+    "noPrecinctFoundMsg": "Finner ikke polygon for adressen eller lokasjonen"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Velg polygonlag",

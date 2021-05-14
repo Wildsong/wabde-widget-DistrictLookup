@@ -76,7 +76,10 @@ define({
     "set": "Nustatyti",
     "fieldName": "Pavadinimas",
     "invalidUrlTip": "URL ${URL} yra neteisingas arba nepasiekiamas.",
-    "invalidSearchSources": "Netinkami paieškos šaltinio parametrai"
+    "invalidSearchSources": "Netinkami paieškos šaltinio parametrai",
+    "errorMessageLabel": "Klaidos pranešimas",
+    "errorMessageHint": "Pastaba: nustatykite pranešimą, kuris bus rodomas, kai nebus rasta rezultatų",
+    "noPrecinctFoundMsg": "Šiam adresui arba vietai nerasta jokių poligonų"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Pasirinkti poligono sluoksnį",

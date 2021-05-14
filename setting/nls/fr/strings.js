@@ -76,7 +76,10 @@ define({
     "set": "Définir",
     "fieldName": "Nom",
     "invalidUrlTip": "L’URL ${URL} est incorrecte ou inaccessible.",
-    "invalidSearchSources": "Paramètres de source de recherche non valides"
+    "invalidSearchSources": "Paramètres de source de recherche non valides",
+    "errorMessageLabel": "Message d’erreur",
+    "errorMessageHint": "Astuce : déclenchez l’affichage d’un message lorsqu’aucun résultat n’est trouvé",
+    "noPrecinctFoundMsg": "Aucun polygone trouvé pour cette adresse ou cette localisation"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Sélectionner la couche de polygones",

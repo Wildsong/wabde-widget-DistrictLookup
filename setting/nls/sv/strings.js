@@ -76,7 +76,10 @@ define({
     "set": "Ange",
     "fieldName": "Namn",
     "invalidUrlTip": "URL:en ${URL} är ogiltig eller går inte att öppna.",
-    "invalidSearchSources": "Ogiltiga sökkällinställningar"
+    "invalidSearchSources": "Ogiltiga sökkällinställningar",
+    "errorMessageLabel": "Felmeddelande",
+    "errorMessageHint": "Tips! Ställ in ett meddelande som ska visas när inga resultat hittas",
+    "noPrecinctFoundMsg": "Ingen polygon hittades för den här adressen eller platsen"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "Välj polygonlager",

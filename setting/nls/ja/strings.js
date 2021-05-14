@@ -76,7 +76,10 @@ define({
     "set": "設定",
     "fieldName": "名前",
     "invalidUrlTip": "URL ${URL} は無効であるか、アクセスできません。",
-    "invalidSearchSources": "検索ソースの設定が無効です"
+    "invalidSearchSources": "検索ソースの設定が無効です",
+    "errorMessageLabel": "エラー メッセージ",
+    "errorMessageHint": "ヒント: 結果が見つからない場合に表示するメッセージを設定します",
+    "noPrecinctFoundMsg": "この住所または位置ではポリゴンが見つかりませんでした"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "ポリゴン レイヤーの選択",

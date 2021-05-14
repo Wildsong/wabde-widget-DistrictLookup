@@ -76,7 +76,10 @@ define({
     "set": "הגדר",
     "fieldName": "שם",
     "invalidUrlTip": "ה-URL ‏${URL} שגוי או אינו נגיש.",
-    "invalidSearchSources": "הגדרות חיפוש מקור לא חוקיות"
+    "invalidSearchSources": "הגדרות חיפוש מקור לא חוקיות",
+    "errorMessageLabel": "הודעת שגיאה",
+    "errorMessageHint": "רמז: הגדר הודעה שתוצג אם לא נמצאו תוצאות",
+    "noPrecinctFoundMsg": "לא נמצא פוליגון עבור כתובת או מיקום אלה"
   },
   "layerSelector": {
     "selectPolygonLayerLabel": "בחר שכבת פוליגונים",
