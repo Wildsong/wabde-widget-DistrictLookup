@@ -1,4 +1,4 @@
-﻿/*global define*/
+/*global define*/
 define({
   "_widgetLabel": "Przegląd okręgów",
   "searchHeaderText": "Wyszukaj adres lub zlokalizuj na mapie",

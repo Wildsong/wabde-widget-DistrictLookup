@@ -1,4 +1,4 @@
-﻿/*global define*/
+/*global define*/
 define({
   "_widgetLabel": "Aluehaku",
   "searchHeaderText": "Hae osoitetta tai etsi kartalta",

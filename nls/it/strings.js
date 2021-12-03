@@ -1,4 +1,4 @@
-﻿/*global define*/
+/*global define*/
 define({
   "_widgetLabel": "District Lookup",
   "searchHeaderText": "Cercare un indirizzo o individuarlo sulla mappa",
